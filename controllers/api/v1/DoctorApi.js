@@ -1,7 +1,7 @@
 const Doctor = require('../../../models/doctor');
 const JWT = require('jsonwebtoken');
 
-module.export.signIn = async (req, res) => {
+module.exports.signIn = async (req, res) => {
     try {
         let doctor = await Doctor.findOne({ 'username': req.body.username });
 
@@ -25,7 +25,7 @@ module.export.signIn = async (req, res) => {
     }
 }
 
-module.export.signUp = async (req, res) => {
+module.exports.signUp = async (req, res) => {
     try {
         let doctor = await Doctor.findOne({ 'username': req.body.username });
 

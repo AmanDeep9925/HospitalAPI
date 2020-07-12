@@ -62,7 +62,7 @@ module.exports.createreport = async (req, res) => {
     }
 }
 
-module.export.allreports = async (req, res) => {
+module.exports.allreports = async (req, res) => {
 
     try {
         let patient = await Pateint.findOne({'phone' : id});
