@@ -1,7 +1,15 @@
 const express = require('express');
 const app = express();
-const passport = require('passport');
+
 const db = require('./config/mongoose');
+
+const passport = require('passport');
+const jwtStrategy = require('./config/passportJWTStrategy');
+
+
+app.use(express.urlencoded({extended : true}));
+app.use('/',require('./routes/index'));
+
 
 const port = 8000;
 

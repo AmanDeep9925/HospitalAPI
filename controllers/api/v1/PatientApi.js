@@ -1,6 +1,12 @@
 const Pateint = require('../../../models/patient');
 const Report = require('../../../models/report');
 
+module.exports.index = (req,res)=>{
+    return res.json(200,{
+        "message" : "hi from Index"
+    })
+}
+
 module.exports.registerpatient = async (req, res) => {
     if (req.body == undefined || req.body.phone == undefined || (req.body.phone > 0 && req.body.phone < 10)) {
         return res.json('200', {

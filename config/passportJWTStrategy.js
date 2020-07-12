@@ -1,18 +1,17 @@
 const passport = require('passport');
-const jwtStrategy = require('passport-jwt').Strategy;
-const extractJWT = require('passport-jwt').ExtractJwt;
-
+const JWTStrategy = require('passport-jwt').Strategy;
+const ExtractJWT = require('passport-jwt').ExtractJwt;
 const Doctor = require('../models/doctor');
 
-let opts =  {
-    jwsFromRequest : extractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey : "thisKeyIsASecretKey"
-};
+let opts = {
+    jwtFromRequest : ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey : 'ThisIsSecret'
+}
 
-passport.use(new jwtStrategy(opts,(payload,done)=>{
-    Doctor.findById(payload._id,(err,doctor)=>{
+passport.use(new JWTStrategy(opts,(jwtPayload,done)=>{
+    Doctor.findById(jwtPayload._id,(err,doctor)=>{
         if(err){
-            console.log("Error in finding the info about doctor");
+            console.log("Error in establishing JWT");
             return;
         }else if(doctor){
             return done(null,user);
