@@ -6,7 +6,7 @@ const Doctor = require('../models/doctor');
 
 let opts =  {
     jwsFromRequest : extractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey : "thisKeyIsASecret"
+    secretOrKey : "thisKeyIsASecretKey"
 };
 
 passport.use(new jwtStrategy(opts,(payload,done)=>{
