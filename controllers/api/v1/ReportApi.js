@@ -1,3 +1,5 @@
+// Checking the status of the report of the patients
+
 const Report = require('../../../models/report');
 
 module.exports.status = async (req,res)=>{

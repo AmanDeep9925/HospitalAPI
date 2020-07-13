@@ -1,13 +1,11 @@
+// Patients routes
+
 const Pateint = require('../../../models/patient');
 const Report = require('../../../models/report');
 
-module.exports.index = (req,res)=>{
-    return res.json(200,{
-        "message" : "hi from Index"
-    })
-}
-
+// Registraing the new patient
 module.exports.registerpatient = async (req, res) => {
+    // Checking of the details entered are correct or not
     if (req.body == undefined || req.body.phone == undefined || (req.body.phone > 0 && req.body.phone < 10)) {
         return res.json('200', {
             'message': "Enter valid mobile number for registration"
@@ -15,6 +13,7 @@ module.exports.registerpatient = async (req, res) => {
     }
 
     try {
+        // creating new patient
         let newPatient = await Pateint.create(req.body)
         if (newPatient) {
             return res.json(200, {
@@ -30,8 +29,9 @@ module.exports.registerpatient = async (req, res) => {
     }
 }
 
-module.exports.createreport = async (req, res) => {
+// Generating the reports
 
+module.exports.createreport = async (req, res) => {
 
     if (!req.body.status) {
         return res.json(422, {
@@ -68,6 +68,8 @@ module.exports.createreport = async (req, res) => {
     }
 }
 
+
+// Showing all the reports
 module.exports.allreports = async (req, res) => {
 
     try {

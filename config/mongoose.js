@@ -1,3 +1,6 @@
+// Setting up the MONGODB for the database
+
+
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 
