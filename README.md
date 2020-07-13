@@ -1,7 +1,7 @@
 
 # Hospital API
 
-Developing an API using Node.js and MongoDB for the doctors of a Delhi Hospitals which have been allocated by the Govt for testing and quarantine + well being of COVID-19 patients
+Developing an API using Node.js and MongoDB for the doctors of a Delhi Hospitals which have been allocated by the Govt for testing and caring for the Covid+ patients
 
 ### SetUp on your machine
 
