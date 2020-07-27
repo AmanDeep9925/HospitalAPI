@@ -22,7 +22,7 @@ module.exports.signIn = async (req, res) => {
         }
         // else doctor exists
         return res.json(200,{
-            'message' : "Signed In Successfully",
+            'message' : "Logged In Successfully 😎",
             "token" : JWT.sign(doctor.toJSON(),'ThisIsSecret',{expiresIn : 1000 * 60 * 30})
         })
 
@@ -41,7 +41,7 @@ module.exports.signUp = async (req, res) => {
         // If doctor exists, ask for fresh signup
         if (doctor) {
             return res.json(422, {
-                "message ": "Already registered, try with other details:)"
+                "message": "Already registered, try with other details 😰 "
             });
         }
         // else create the doctor account
@@ -50,7 +50,7 @@ module.exports.signUp = async (req, res) => {
 
             if (newDoc) {
                 return res.json(200, {
-                    "message ": "Registered Successfully",
+                    "message": "Registered Successfully 🙂",
                 })
             }
         }

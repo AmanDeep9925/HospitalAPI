@@ -24,8 +24,7 @@ app.listen(port,(err)=>{
         console.log("Error in running server :/",err);
         return;
     }
-
-
-
     console.log(`Server is Up at : http://localhost:${port}` );
 })
+
+module.exports = app;
