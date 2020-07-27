@@ -16,7 +16,7 @@ passport.use(new JWTStrategy(opts,(jwtPayload,done)=>{
             console.log("Error in establishing JWT");
             return;
         }else if(doctor){
-            return done(null,user);
+            return done(null,doctor);
         }else{
             return done(null,false);
         }
