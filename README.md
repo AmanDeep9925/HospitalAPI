@@ -1,4 +1,4 @@
-# Hospital API
+# Hospital API 🏥
 
 Developing an API using Node.js and MongoDB for the doctors of a Delhi Hospitals which have been allocated by the Govt for testing and caring for the Covid+ patients
 
